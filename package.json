@@ -1,0 +1,24 @@
+{
+  "name": "pdns-geodns",
+  "version": "1.0.0",
+  "description": "GeoDNS for PowerDNS via Remote backend",
+  "main": "server.js",
+  "dependencies": {
+    "async": "^1.2.1",
+    "geolib": "^2.0.17",
+    "ip": "^0.3.3",
+    "knex": "^0.8.6",
+    "maxmind-db-reader": "^0.1.1",
+    "mkdirp": "^0.5.1",
+    "mysql": "^2.7.0",
+    "optimist": "^0.6.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Nikki",
+  "license": "ISC",
+  "repository": "github:nikkiii/powerdns-geodns"
+}
