@@ -54,7 +54,9 @@ function UnixJSONRPC(path) {
 util.inherits(UnixJSONRPC, EventEmitter);
 
 UnixJSONRPC.prototype.handleData = function(socket, obj) {
-	this.emit(obj.method, obj.parameters, UnixJSONRPC.prototype.write.bind(this, socket));
+	if (!this.emit(obj.method, obj.parameters, UnixJSONRPC.prototype.write.bind(this, socket))) {
+		this.write(socket, { result : false });
+	}
 };
 
 UnixJSONRPC.prototype.write = function(socket, obj) {
